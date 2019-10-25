@@ -78,8 +78,8 @@ class addLocation: UIViewController, UITextFieldDelegate  {
                     print("*** coordinate ***")
                     print(placemark)
                     
-                      parametersAll.StudentLocation.latitude = coordinate.latitude
-                    parametersAll.StudentLocation .longitude = coordinate.longitude
+//                      parametersAll.StudentLocation.latitude = coordinate.latitude
+//                    parametersAll.StudentLocation .longitude = coordinate.longitude
                     
                     if (placemark.locality != nil && placemark.administrativeArea != nil){
                         parametersAll.StudentLocation .mapString = ("\(placemark.locality!),\(placemark.administrativeArea!)")

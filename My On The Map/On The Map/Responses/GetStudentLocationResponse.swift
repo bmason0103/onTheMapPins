@@ -16,9 +16,9 @@ import Foundation
         //String
         var lastName = "last name"
         //String
-        var lats = 0.0
+        var latitude = 0.0
         //Float
-        var long = 0.0
+        var longitude = 0.0
         //Float
         var mapStrings = "mapString"
         //String
@@ -52,12 +52,12 @@ import Foundation
                 if let mediaURL = dictionary[parametersAll.StudentLocation.mediaURL] as? String {
                     mediaURLs = mediaURL
                 }
-//                if let lon = dictionary[parametersAll.StudentLocation.longitude] as? Double {
-//                    long = lon
-//                }
-//                if let lat = dictionary[parametersAll.StudentLocation.latitude] as? Double {
-//                    lats = lat
-//                }
+                if let lon = dictionary[parametersAll.StudentLocation.longitude] as? Double {
+                    longitude = lon
+                }
+                if let lat = dictionary[parametersAll.StudentLocation.latitude] as? Double {
+                    latitude = lat
+                }
             }
             
             static func studentsFromResults(_ results: [[String:AnyObject]]) -> [LocationResponse] {

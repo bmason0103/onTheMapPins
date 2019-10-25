@@ -27,6 +27,8 @@ class Client: NSObject {
         let request = NSMutableURLRequest(url:URL(string:urlString)!)
         request.httpMethod = "GET"
         
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         
         /* Make the request */
@@ -57,18 +59,20 @@ class Client: NSObject {
                 return
             }
             
+            if urlString.contains(parametersAll.Constants.sessionURL) {
+                let range = Range(uncheckedBounds: (5, data.count))
+                let newData = data.subdata(in: range)
+                
+                /* Parse the data and use the data */
+                convertDataWithCompletionHandler(newData, completionHandlerForConvertData: completionHandlerForGETMethod)
+            }
+            else {
+                convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForGETMethod)
             
-            let range = Range(uncheckedBounds: (5, data.count))
-            let newData = data.subdata(in: range)
-            
-            /* Parse the data and use the data */
-            convertDataWithCompletionHandler(newData, completionHandlerForConvertData: completionHandlerForGETMethod)
-            
-            
-            convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForGETMethod)
+           
         }
         
-        
+        }
         /* Start the request */
         task.resume()
         

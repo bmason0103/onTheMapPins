@@ -58,26 +58,26 @@ class parametersAll {
     //MARK: JSON Response Keys -Student Data
     struct StudentLocation {
         
-        static var Response = "response"
+        static var Response = "results"
         static var objectId = "objectId"
         //String like a user ID
         static var uniqueKey = "uniqueKey"
         //String
-        static var firstName = "firstname"
+        static var firstName = "firstName"
         //String
-        static var lastName = "lastname"
+        static var lastName = "lastName"
         //String
         static var mapString = "mapString"
         //String
         static var mediaURL = "mediaURL"
         //String
-        static var latitude = 0.0
+        static var latitude = "latitude"
         //Double
-        static var longitude = 0.0
+        static var longitude = "longitude"
         //Double
-        static var createdAt = "Date"
+        static var createdAt = "createdAt"
         //Date
-        static var updatedAt = "Date"
+        static var updatedAt = "updatedAt"
         //Date
         static var studentsLocDict = [LocationResponse]()
         
